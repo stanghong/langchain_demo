@@ -1,3 +1,4 @@
+
 import sys
 import pinecone
 from langchain.document_loaders import UnstructuredPDFLoader, OnlinePDFLoader
@@ -31,6 +32,8 @@ def answer_questions(query, docsearch, chain):
     results.append(ans)
     return results
 
+
+
 if __name__ == "__main__":
     print(sys.path)
 
@@ -38,10 +41,11 @@ if __name__ == "__main__":
     PINECONE_API_KEY = 'your pinecone API key'
     PINECONE_API_ENV = 'asia-northeast1-gcp'
 
+
     data = load_documents("./data/Chip Huyen - Designing Machine Learning Systems_ An Iterative Process for Production-Ready Applications-O'Reilly Media (2022).pdf")
     print(f'You have {len(data)} document(s) in your data')
     print(f'There are {len(data[0].page_content)} characters in your document')
-
+    # %%
     texts = chunk_documents(data)
     print(f'Now you have {len(texts)} documents')
 
@@ -75,3 +79,5 @@ if __name__ == "__main__":
     with open('output.txt', 'w') as f:
         for item in results:
                 f.write("%s\n" % item)
+
+# %%

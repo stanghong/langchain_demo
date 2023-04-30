@@ -22,7 +22,6 @@ from langchain.vectorstores import Chroma, Pinecone
 from langchain.embeddings.openai import OpenAIEmbeddings
 import pinecone
 
-# 
 OPENAI_API_KEY = 'your openAI API key'
 PINECONE_API_KEY = 'your pinecone API key'
 PINECONE_API_ENV = 'asia-northeast1-gcp'
